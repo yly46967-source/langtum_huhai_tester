@@ -8,9 +8,12 @@ langtum_tester/uploads/
 # Logs
 *.log
 
+# Input/output data
+输入/
+输出/
+
 # Test/temp files
 *.xlsx
-!输出/20艘船舶设备列表.xlsx
 ltm_data-*.json
 manual_test_result.json
 test_workflow.py
