@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langtum 工作流测试系统</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f7fa; color: #212529; min-height: 100vh;
+        }
+
+        .header {
+            background: #fff; border-bottom: 1px solid #dee2e6;
+            padding: 16px 24px; display: flex; align-items: center; gap: 16px;
+        }
+        .header h1 { font-size: 18px; color: #212529; font-weight: 600; }
+        .toolbar { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+        .toolbar label { font-size: 13px; color: #6c757d; }
+        .toolbar input[type="number"] {
+            width: 60px; padding: 4px 8px; border: 1px solid #dee2e6;
+            border-radius: 4px; font-size: 13px; text-align: center;
+        }
+        .btn {
+            padding: 6px 14px; border-radius: 4px; border: 1px solid #dee2e6;
+            font-size: 13px; cursor: pointer; background: #fff; color: #212529;
+            display: inline-flex; align-items: center; gap: 4px;
+        }
+        .btn:hover { background: #f8f9fa; }
+        .btn-primary { background: #0d6efd; color: #fff; border-color: #0d6efd; }
+        .btn-primary:hover { background: #0b5ed7; }
+        .btn-danger { background: #dc3545; color: #fff; border-color: #dc3545; }
+        .btn-danger:hover { background: #bb2d3b; }
+        .btn-success { background: #198754; color: #fff; border-color: #198754; }
+        .btn-success:hover { background: #157347; }
+        .btn-warning { background: #ffc107; color: #212529; border-color: #ffc107; }
+        .btn-warning:hover { background: #e0a800; }
+        .btn-outline { background: #fff; color: #0d6efd; border-color: #0d6efd; }
+        .btn-outline:hover { background: #e8f0fe; }
+        .btn-sm { padding: 3px 10px; font-size: 12px; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        input[type="file"] { display: none; }
+
+        .main { display: flex; height: calc(100vh - 57px); }
+
+        .left-panel {
+            width: 380px; min-width: 340px; background: #fff;
+            border-right: 1px solid #dee2e6; display: flex; flex-direction: column;
+        }
+        .left-panel-header {
+            padding: 12px 16px; font-size: 13px; font-weight: 600;
+            color: #6c757d; border-bottom: 1px solid #dee2e6;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .left-panel-body { flex: 1; overflow-y: auto; }
+
+        /* Folder grouping */
+        .folder-section { border-bottom: 1px solid #e9ecef; }
+        .folder-header {
+            padding: 8px 16px; font-size: 12px; font-weight: 600;
+            color: #495057; background: #f8f9fa; border-bottom: 1px solid #e9ecef;
+            display: flex; align-items: center; gap: 6px;
+            text-transform: uppercase; letter-spacing: 0.3px;
+        }
+        .folder-header .folder-icon { font-size: 14px; }
+
+        .file-card {
+            padding: 12px 16px; border-bottom: 1px solid #e9ecef;
+            cursor: pointer; transition: background 0.15s;
+        }
+        .file-card:hover { background: #f8f9fa; }
+        .file-card.active { background: #e8f0fe; border-left: 3px solid #0d6efd; }
+        .file-card.in-folder { padding-left: 28px; }
+        .file-name { font-size: 14px; font-weight: 500; margin-bottom: 4px;
+                     overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .file-meta { font-size: 12px; color: #6c757d; margin-bottom: 8px; }
+        .file-progress { font-size: 12px; display: flex; gap: 8px; margin-bottom: 8px; }
+        .file-progress .ok { color: #198754; }
+        .file-progress .err { color: #dc3545; }
+        .file-progress .run { color: #f59e0b; }
+        .file-progress .wait { color: #6c757d; }
+        .file-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+        .file-empty { padding: 40px 16px; text-align: center; color: #adb5bd; font-size: 13px; }
+
+        .right-panel { flex: 1; overflow-y: auto; background: #f5f7fa; display: flex; flex-direction: column; }
+        .right-header {
+            padding: 12px 20px; background: #fff; border-bottom: 1px solid #dee2e6;
+            font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 12px;
+            flex-shrink: 0;
+        }
+        .right-empty { padding: 80px 20px; text-align: center; color: #adb5bd; font-size: 14px; }
+
+        .task-table-wrap { flex: 1; overflow-y: auto; }
+        .task-table { width: 100%; border-collapse: collapse; background: #fff; }
+        .task-table th {
+            padding: 8px 12px; text-align: left; font-size: 12px; font-weight: 600;
+            color: #6c757d; background: #f8f9fa; border-bottom: 1px solid #dee2e6;
+            position: sticky; top: 0; z-index: 1;
+        }
+        .task-table td { padding: 8px 12px; border-bottom: 1px solid #e9ecef; font-size: 13px; }
+        .task-table tr.task-row:hover td { background: #f8f9fa; }
+        .task-table tr.task-row.expanded td { background: #fffbe6; }
+
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+        .badge-pending { background: #e9ecef; color: #6c757d; }
+        .badge-running { background: #fff3cd; color: #856404; }
+        .badge-success { background: #d1e7dd; color: #0f5132; }
+        .badge-failed { background: #f8d7da; color: #842029; }
+
+        .task-detail { display: none; background: #fffbe6; border-bottom: 1px solid #dee2e6; }
+        .task-detail.open { display: table-row; }
+        .task-detail td { padding: 10px 16px; }
+        .task-detail .detail-section {
+            margin-bottom: 12px;
+        }
+        .task-detail .detail-label {
+            font-size: 12px; color: #6c757d; font-weight: 600; margin-bottom: 4px;
+        }
+        .task-detail pre {
+            background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px;
+            padding: 10px 14px; font-size: 12px; font-family: "Cascadia Code", Consolas, monospace;
+            white-space: pre-wrap; word-break: break-all; color: #495057;
+            max-height: 300px; overflow-y: auto;
+        }
+        .task-detail .output-items { margin-top: 6px; }
+        .task-detail .output-item {
+            background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px;
+            padding: 8px 12px; margin-bottom: 6px; font-size: 12px;
+        }
+        .task-detail .output-item .item-header {
+            font-weight: 600; color: #212529; margin-bottom: 4px;
+        }
+        .task-detail .output-item .item-field {
+            display: flex; gap: 4px; margin-bottom: 2px; color: #495057;
+        }
+        .task-detail .output-item .item-field .field-label {
+            color: #6c757d; min-width: 80px; flex-shrink: 0;
+        }
+        .task-detail .output-item .item-field .field-value {
+            flex: 1; word-break: break-all;
+        }
+        .task-detail .no-output { color: #adb5bd; font-size: 12px; font-style: italic; }
+        .task-detail .error-msg { color: #dc3545; font-size: 12px; margin-top: 8px; }
+        .td-actions { white-space: nowrap; }
+        .time-col { font-size: 11px; color: #868e96; white-space: nowrap; }
+
+        /* Confirm dialog */
+        .confirm-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3); display: flex; align-items: center;
+            justify-content: center; z-index: 1000;
+        }
+        .confirm-box {
+            background: #fff; border-radius: 8px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-width: 400px; width: 90%;
+        }
+        .confirm-box h3 { font-size: 16px; margin-bottom: 12px; }
+        .confirm-box p { font-size: 14px; color: #6c757d; margin-bottom: 20px; }
+        .confirm-box .confirm-actions { display: flex; gap: 8px; justify-content: flex-end; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Langtum 工作流测试系统</h1>
+    <div class="toolbar">
+        <button class="btn btn-outline" onclick="downloadAll()" id="btnDownloadAll" style="display:none">批量下载</button>
+        <button class="btn" onclick="document.getElementById('fileInput').click()">选择文件</button>
+        <button class="btn" onclick="document.getElementById('folderInput').click()">选择文件夹</button>
+        <input type="file" id="fileInput" multiple accept=".txt" onchange="handleUpload(this.files)">
+        <input type="file" id="folderInput" webkitdirectory multiple onchange="handleUpload(this.files)">
+        <label>并发数:</label>
+        <input type="number" id="concurrency" value="20" min="1" max="100">
+    </div>
+</div>
+
+<div class="main">
+    <div class="left-panel">
+        <div class="left-panel-header">
+            <span>文件列表</span>
+        </div>
+        <div class="left-panel-body" id="fileList">
+            <div class="file-empty">上传 txt 文件开始测试</div>
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="right-header" id="rightHeader">选择一个文件查看任务</div>
+        <div id="taskArea">
+            <div class="right-empty">点击左侧文件查看设备列表</div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm dialog container -->
+<div id="confirmDialog" style="display:none"></div>
+
+<script>
+let selectedFileId = null;
+let filesCache = [];
+let expandedTaskId = null;
+
+// --- Confirm Dialog ---
+
+function showConfirm(title, message) {
+    return new Promise((resolve) => {
+        const container = document.getElementById('confirmDialog');
+        container.style.display = '';
+        container.innerHTML = `<div class="confirm-overlay">
+            <div class="confirm-box">
+                <h3>${title}</h3>
+                <p>${message}</p>
+                <div class="confirm-actions">
+                    <button class="btn" onclick="closeConfirm(false)">取消</button>
+                    <button class="btn btn-danger" onclick="closeConfirm(true)">确认删除</button>
+                </div>
+            </div>
+        </div>`;
+        window._confirmResolve = resolve;
+    });
+}
+
+function closeConfirm(result) {
+    document.getElementById('confirmDialog').style.display = 'none';
+    if (window._confirmResolve) {
+        window._confirmResolve(result);
+        window._confirmResolve = null;
+    }
+}
+
+// --- Refresh ---
+
+function scheduleRefresh() {
+    setTimeout(fullRefresh, 2000);
+}
+
+async function fullRefresh() {
+    await loadFiles();
+    if (selectedFileId) await loadTasks(selectedFileId);
+}
+
+// --- Upload ---
+
+async function handleUpload(fileList) {
+    const formData = new FormData();
+    let count = 0;
+    for (const f of fileList) {
+        if (f.name.endsWith('.txt')) {
+            formData.append('files', f, f.webkitRelativePath || f.name);
+            count++;
+        }
+    }
+    if (!count) return;
+    await fetch('/api/files/upload', { method: 'POST', body: formData });
+    await loadFiles();
+}
+
+// --- File list ---
+
+async function loadFiles() {
+    const resp = await fetch('/api/files');
+    filesCache = await resp.json();
+    renderFiles();
+    // Show/hide batch download button
+    const hasResults = filesCache.some(f => f.success > 0);
+    document.getElementById('btnDownloadAll').style.display = hasResults ? '' : 'none';
+}
+
+function renderFiles() {
+    const container = document.getElementById('fileList');
+    if (!filesCache.length) {
+        container.innerHTML = '<div class="file-empty">上传 txt 文件开始测试</div>';
+        return;
+    }
+
+    // Group by folder_name
+    const groups = {};
+    const noFolder = [];
+    for (const f of filesCache) {
+        if (f.folder_name) {
+            if (!groups[f.folder_name]) groups[f.folder_name] = [];
+            groups[f.folder_name].push(f);
+        } else {
+            noFolder.push(f);
+        }
+    }
+
+    let html = '';
+
+    // Render folder groups
+    for (const [folder, files] of Object.entries(groups)) {
+        html += `<div class="folder-section">
+            <div class="folder-header"><span class="folder-icon">&#128193;</span> ${escHtml(folder)}</div>`;
+        for (const f of files) {
+            html += renderFileCard(f, true);
+        }
+        html += '</div>';
+    }
+
+    // Render files without folder
+    for (const f of noFolder) {
+        html += renderFileCard(f, false);
+    }
+
+    container.innerHTML = html;
+}
+
+function renderFileCard(f, inFolder) {
+    const isActive = f.id === selectedFileId;
+    const statusText = { pending: '等待', running: '进行中', completed: '已完成' }[f.status] || f.status;
+    const hasRunning = f.running > 0;
+    const hasPending = f.pending > 0;
+
+    let actions = '';
+    if (hasPending && !hasRunning) {
+        actions += `<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();startFile(${f.id})">开始全部</button>`;
+    }
+    if (hasRunning) {
+        actions += `<button class="btn btn-danger btn-sm" onclick="event.stopPropagation();abortFile(${f.id})">中止全部</button>`;
+    }
+    if (f.success > 0) {
+        actions += `<button class="btn btn-success btn-sm" onclick="event.stopPropagation();downloadExcel(${f.id})">下载结果</button>`;
+    }
+    actions += `<button class="btn btn-danger btn-sm" onclick="event.stopPropagation();deleteFile(${f.id})" style="background:#fff;color:#dc3545;border-color:#dc3545">删除</button>`;
+
+    const parseBadge = f.parse_status === 'failed'
+        ? ' <span class="badge badge-failed" style="font-size:10px">解析失败</span>'
+        : '';
+
+    return `<div class="file-card ${isActive ? 'active' : ''} ${inFolder ? 'in-folder' : ''}" onclick="selectFile(${f.id})">
+        <div class="file-name" title="${escHtml(f.upload_name)}">${escHtml(f.upload_name)}${parseBadge}</div>
+        <div class="file-meta">${escHtml(f.ship_name || f.ship_key)} · ${escHtml(f.ship_type || '')} · ${f.total_items}项 · ${statusText}</div>
+        <div class="file-progress">
+            <span class="ok">成功 ${f.success}</span>
+            <span class="err">失败 ${f.failed}</span>
+            <span class="run">运行 ${f.running}</span>
+            <span class="wait">等待 ${f.pending}</span>
+        </div>
+        <div class="file-actions">${actions}</div>
+    </div>`;
+}
+
+function escHtml(s) {
+    if (!s) return '';
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// --- Select file & tasks ---
+
+async function selectFile(fileId) {
+    selectedFileId = fileId;
+    expandedTaskId = null;
+    renderFiles();
+    const f = filesCache.find(x => x.id === fileId);
+    document.getElementById('rightHeader').textContent = f ? `${f.upload_name} — ${f.ship_name || f.ship_key}` : '';
+    await loadTasks(fileId);
+}
+
+async function loadTasks(fileId) {
+    const resp = await fetch(`/api/files/${fileId}/tasks`);
+    const tasks = await resp.json();
+    renderTasks(tasks);
+}
+
+function renderTasks(tasks) {
+    const container = document.getElementById('taskArea');
+    if (!tasks.length) {
+        container.innerHTML = '<div class="right-empty">无任务</div>';
+        return;
+    }
+    let html = `<div class="task-table-wrap"><table class="task-table"><thead><tr>
+        <th>#</th><th>设备名称</th><th>制造商</th><th>型号</th><th>状态</th><th>开始时间</th><th>操作</th>
+    </tr></thead><tbody>`;
+    for (const t of tasks) {
+        const bc = { pending:'badge-pending', running:'badge-running', success:'badge-success', failed:'badge-failed' }[t.status] || '';
+        const sl = { pending:'等待', running:'运行中', success:'成功', failed:'失败' }[t.status] || t.status;
+        const isOpen = expandedTaskId === t.id;
+
+        let actionBtns = '';
+        if (t.status === 'pending' || t.status === 'failed') {
+            actionBtns += `<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();startTask(${t.id})">开始</button>`;
+        } else if (t.status === 'running') {
+            actionBtns += `<button class="btn btn-danger btn-sm" onclick="event.stopPropagation();abortTask(${t.id})">中止</button>`;
+        }
+        if (t.status !== 'running') {
+            actionBtns += ` <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();retryTask(${t.id})" style="font-size:11px;padding:2px 8px">重试</button>`;
+        }
+
+        html += `<tr class="task-row ${isOpen ? 'expanded' : ''}" onclick="toggleDetail(${t.id})" style="cursor:pointer" id="task-row-${t.id}">
+            <td>${t.item_index + 1}</td>
+            <td>${escHtml(t.source_name)}</td>
+            <td>${escHtml(t.manufacturer) || '-'}</td>
+            <td>${escHtml(t.model) || '-'}</td>
+            <td><span class="badge ${bc}">${sl}</span></td>
+            <td class="time-col">${t.started_at || '-'}</td>
+            <td class="td-actions">${actionBtns}</td>
+        </tr>`;
+
+        // Detail row with input + output
+        const inputJson = JSON.stringify({ manufacturer: t.manufacturer, model: t.model, source_name: t.source_name }, null, 2);
+
+        // Build "actual request sent to Langtum" from raw_output if available
+        let requestHtml = '';
+        if (t.raw_output) {
+            try {
+                const raw = JSON.parse(t.raw_output);
+                const actualInput = raw.input || null;
+                if (actualInput) {
+                    requestHtml = `<div class="detail-section">
+                        <div class="detail-label">实际请求参数 (Langtum input):</div>
+                        <pre>${escHtml(JSON.stringify(actualInput, null, 2))}</pre>
+                    </div>`;
+                }
+            } catch(e) {}
+        }
+
+        let outputHtml = '';
+        if (t.status === 'success' && t.raw_output) {
+            outputHtml = renderOutput(t.raw_output);
+        } else if (t.status === 'success') {
+            outputHtml = '<div class="no-output">暂无输出结果</div>';
+        } else if (t.status === 'failed') {
+            let errParts = [];
+            if (t.error_message) errParts.push(`<div class="error-msg">错误: ${escHtml(t.error_message)}</div>`);
+            if (t.raw_output) {
+                try {
+                    const raw = JSON.parse(t.raw_output);
+                    if (raw.output && raw.output.error) {
+                        errParts.push(`<div class="error-msg">Langtum 错误: ${escHtml(raw.output.error)}</div>`);
+                    }
+                } catch(e) {}
+            }
+            outputHtml = errParts.length ? errParts.join('') : '<div class="no-output">任务失败</div>';
+        } else if (t.status === 'running') {
+            outputHtml = '<div class="no-output">任务执行中...</div>';
+        } else {
+            outputHtml = '<div class="no-output">任务未执行</div>';
+        }
+
+        html += `<tr class="task-detail ${isOpen ? 'open' : ''}" id="task-detail-${t.id}">
+            <td colspan="7">
+                <div class="detail-section">
+                    <div class="detail-label">输入参数:</div>
+                    <pre>${escHtml(inputJson)}</pre>
+                </div>
+                ${requestHtml}
+                <div class="detail-section">
+                    <div class="detail-label">输出结果:</div>
+                    ${outputHtml}
+                </div>
+            </td>
+        </tr>`;
+    }
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+}
+
+function renderOutput(rawOutput) {
+    try {
+        const data = JSON.parse(rawOutput);
+        // raw_output = json.dumps(result["detail"]) => structure: {"end_item": [...]}
+        // or may be wrapped: {"output": {"end_item": [...]}}
+        let endItems = data.end_item;
+        if (!endItems && data.output && data.output.end_item) {
+            endItems = data.output.end_item;
+        }
+        if (!endItems || !endItems.length) {
+            return `<pre>${escHtml(JSON.stringify(data, null, 2))}</pre>`;
+        }
+
+        const DISPLAY_FIELDS = [
+            ['保养类型', 'maintenance_type'],
+            ['保养项目', 'maintenance_item'],
+            ['保养步骤', 'recommended_procedure'],
+            ['固定周期', 'fixed_interval_value', 'fixed_interval_unit'],
+            ['运行时长', 'runtime_threshold_value', 'runtime_threshold_unit'],
+            ['是否不定期', 'has_non_periodic_requirement'],
+            ['是否必须', 'is_mandatory'],
+            ['安全注意事项', 'safety_notes'],
+            ['预计工时', 'estimated_work_hours'],
+            ['所需备件', 'recommended_spares'],
+        ];
+
+        let html = '';
+        for (const ei of endItems) {
+            const items = ei.items || [];
+            const deviceName = ei.source_name || '未知设备';
+            if (!items.length) {
+                html += `<div class="output-item">
+                    <div class="item-header">${escHtml(deviceName)}</div>
+                    <div class="no-output">无保养条目</div>
+                </div>`;
+                continue;
+            }
+            for (const item of items) {
+                html += '<div class="output-item">';
+                html += `<div class="item-header">${escHtml(deviceName)} — ${escHtml(item.maintenance_item || '未命名')}</div>`;
+                for (const fieldDef of DISPLAY_FIELDS) {
+                    const label = fieldDef[0];
+                    if (fieldDef.length === 3) {
+                        // Combined field (value + unit)
+                        const val = item[fieldDef[1]];
+                        const unit = item[fieldDef[2]];
+                        if (val || unit) {
+                            html += `<div class="item-field"><span class="field-label">${label}:</span><span class="field-value">${escHtml(String(val || ''))} ${escHtml(String(unit || ''))}</span></div>`;
+                        }
+                    } else {
+                        const val = item[fieldDef[1]];
+                        if (val !== undefined && val !== null && val !== '') {
+                            const display = typeof val === 'object' ? JSON.stringify(val, null, 2) : String(val);
+                            html += `<div class="item-field"><span class="field-label">${label}:</span><span class="field-value">${escHtml(display)}</span></div>`;
+                        }
+                    }
+                }
+                html += '</div>';
+            }
+        }
+        return html;
+    } catch (e) {
+        return `<pre>${escHtml(rawOutput)}</pre>`;
+    }
+}
+
+function toggleDetail(taskId) {
+    if (expandedTaskId === taskId) {
+        expandedTaskId = null;
+    } else {
+        expandedTaskId = taskId;
+    }
+    const prevRow = document.querySelector('.task-row.expanded');
+    const prevDetail = document.querySelector('.task-detail.open');
+    if (prevRow) prevRow.classList.remove('expanded');
+    if (prevDetail) prevDetail.classList.remove('open');
+
+    if (expandedTaskId) {
+        const row = document.getElementById(`task-row-${taskId}`);
+        const detail = document.getElementById(`task-detail-${taskId}`);
+        if (row) row.classList.add('expanded');
+        if (detail) detail.classList.add('open');
+    }
+}
+
+// --- Actions ---
+
+async function startFile(fileId) {
+    const c = parseInt(document.getElementById('concurrency').value) || 20;
+    await fetch(`/api/files/${fileId}/start`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ concurrency: c })
+    });
+    await fullRefresh();
+    scheduleRefresh();
+}
+
+async function abortFile(fileId) {
+    await fetch(`/api/files/${fileId}/abort`, { method: 'POST' });
+    await fullRefresh();
+}
+
+async function deleteFile(fileId) {
+    const f = filesCache.find(x => x.id === fileId);
+    const name = f ? (f.ship_name || f.ship_key) : '';
+    const confirmed = await showConfirm('删除文件', `确认删除「${name}」及其所有任务和结果？此操作不可恢复。`);
+    if (!confirmed) return;
+
+    await fetch(`/api/files/${fileId}`, { method: 'DELETE' });
+    if (selectedFileId === fileId) {
+        selectedFileId = null;
+        document.getElementById('rightHeader').textContent = '选择一个文件查看任务';
+        document.getElementById('taskArea').innerHTML = '<div class="right-empty">点击左侧文件查看设备列表</div>';
+    }
+    await loadFiles();
+}
+
+async function startTask(taskId) {
+    await fetch(`/api/tasks/${taskId}/start`, { method: 'POST' });
+    await fullRefresh();
+    scheduleRefresh();
+}
+
+async function abortTask(taskId) {
+    await fetch(`/api/tasks/${taskId}/abort`, { method: 'POST' });
+    await fullRefresh();
+}
+
+async function retryTask(taskId) {
+    await fetch(`/api/tasks/${taskId}/retry`, { method: 'POST' });
+    await fullRefresh();
+    scheduleRefresh();
+}
+
+function downloadExcel(fileId) {
+    window.open(`/api/files/${fileId}/download`, '_blank');
+}
+
+function downloadAll() {
+    window.open('/api/files/download-all', '_blank');
+}
+
+// --- SSE ---
+
+function connectSSE() {
+    const es = new EventSource('/api/events');
+    es.onmessage = (event) => {
+        if (event.data) {
+            loadFiles();
+            if (selectedFileId) loadTasks(selectedFileId);
+        }
+    };
+    es.onerror = () => { es.close(); setTimeout(connectSSE, 5000); };
+}
+
+// Init
+loadFiles();
+connectSSE();
+</script>
+</body>
+</html>

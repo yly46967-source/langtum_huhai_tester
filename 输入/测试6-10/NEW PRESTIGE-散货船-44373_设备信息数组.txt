@@ -1,0 +1,942 @@
+[
+{
+manufacturer:"",
+model:"",
+source_name:"Accommodation Ladder（舷梯和引水员组合梯）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Air Condition &Provision Fridge System（空调&制冷系统）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Air oil cut (风油切断)"
+},
+{
+manufacturer:"JRC",
+model:"JHS-183",
+source_name:"AIS"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Aldis lamp"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Anchor & Moorings（锚机和绞机）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Automatic changeover function (泵的自动切换功能)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Aux L T fresh water cooling pump（港口低温淡水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Auxiliary Boilers（锅炉）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Ballast Tanks(压载舱)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Ballast valves (压载阀)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Ballast water treatment system"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Bilge pump(污水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Blowers（风机）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Boiler dosage pump(锅炉投药泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Boiler F.O pump（锅炉燃油泵）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Boiler LS F.O pump(锅炉低硫油泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Bunkering davit （加油吊)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Cargo hold bilge well level alarm(货舱的污水井报警)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Cargo hold bilge ejector pump(货舱污水喷射泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Cargo hold temperature taking pipe(货舱测温管)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Cargo hold water ingress alarm(货舱进水报警)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Cargo Holds（货舱）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Chain block(手拉葫芦)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Chain locker锚链舱"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"COMPASS"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Condensor sea water side cleaning（大气冷凝器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Control box(控制箱)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"D.O. transfer pump（柴油驳运泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Daily compressor(日用空压机)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Damper of purifier room's fan check and remote test(抽风机挡板)"
+},
+{
+manufacturer:"Zhenjiang Marine Auxiliary Machinery Works",
+model:"LE65-1",
+source_name:"Davit of life boat（救生艇吊)"
+},
+{
+manufacturer:"Zhenjiang Marine Auxiliary Machinery Works",
+model:"LE65-1",
+source_name:"Davit of the securing boat救助艇吊"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Distinguishing Marks（夜光马克标识）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"DOPPLER SPEED LOG"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"E/R Bilge pump(机舱舱底水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"E/R bilge well (机舱污水井)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"E/R Overhead Crane(机舱天吊)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"E/R Vent dampers / Funnel dampers(机舱风机和烟囱的百叶窗)"
+},
+{
+manufacturer:"JRC",
+model:"JAN-2000",
+source_name:"ECDIS"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Ejector pump for ballast tank(压载扫舱喷射泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Electrical Equipment(电气设备）"
+},
+{
+manufacturer:"Mitsui Zosen Machinery & Service, Inc",
+model:"SS030/BF6L913",
+source_name:"Emergency diesel generator engine（应急发电柴油机）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Emergency fire pump（应急消防泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Emergency portable pump(hatch cover) 舱盖应急开舱泵"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Emergency switchboard(应急配电板)"
+},
+{
+manufacturer:"Neuenhauser Kompressorenbau GmbH",
+model:"28.2.2.02.02.10.24",
+source_name:"Emergency. air compressor（应急空压机)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"EPIRB"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"F.O supply unit (燃油供油单元)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"F.O supply unit bypass strainer(燃油供油单元旁通滤器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"F.O supply unit strainer(燃油供油单元粗滤器)"
+},
+{
+manufacturer:"ALFA LAVAL(SWEDEN)",
+model:"P636",
+source_name:"F.O. Purifier(燃油分油机)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"F.O. transfer pump（燃油驳运泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"FACSIMILE RECEIVER"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"FFA（消防）"
+},
+{
+manufacturer:"",
+model:"NSL/25-41J-DL3",
+source_name:"Fire & Bilge pump（消防&舱底水泵)"
+},
+{
+manufacturer:"ALLWEILER AG",
+model:"MA125-250",
+source_name:"Fire & GS pump（消防&通用泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Fire Alarm"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Floor drain (地漏)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"FO automatic flush filter(燃油供油单元的自清滤器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"FO Tanks（油舱）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Fresh Tanks(淡水舱)"
+},
+{
+manufacturer:"ALFA LAVAL COPNHAGEN -DEMARK",
+model:"AQUA-100-HW",
+source_name:"Fresh water generator system(造水机）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Fridges and freezer cabinets"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"funnel(烟囱)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"G/E cooling water heater(付机暖缸水加热器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"G/E L.O transfer pump(付机滑油驳运泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"G/E warm water for jacket pump(付机暖缸水泵)"
+},
+{
+manufacturer:"YANMAR（JAPAN）",
+model:"6EY18ALW",
+source_name:"Generator（发电柴油机）NO.1"
+},
+{
+manufacturer:"YANMAR（JAPAN）",
+model:"6EY18ALW",
+source_name:"Generator（发电柴油机）NO.2"
+},
+{
+manufacturer:"YANMAR（JAPAN）",
+model:"6EY18ALW",
+source_name:"Generator（发电柴油机）NO.3"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"GPS"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Harbour sea water cooling pump（停泊海水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Hatch cover(舱盖)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Heat Exchanger（空调热交换器）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Heat Exchanger（锚机热交换器）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Hot water circulating pump（热水循环泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Hot water heater（热水加热器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"ICCP system(船体阴极保护系统)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Immersion suits（浸水服)"
+},
+{
+manufacturer:"南京中船绿洲机器有限公司",
+model:"OGS400C",
+source_name:"Incinerator（焚烧炉）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Inlet filter of daily water pump(日用水泵滤器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"INM-C"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"L,S D.O. transfer pump(低硫柴油驳运泵)"
+},
+{
+manufacturer:"ALFA LAVAL(SWEDEN)",
+model:"P-615",
+source_name:"L.O. Purifier(滑油分油机)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"L.O. transfer pump(滑油驳运泵)"
+},
+{
+manufacturer:"Zhenjiang Marine Auxiliary Machinery Works",
+model:"LE65-1",
+source_name:"Life boat crane( 救生艇架)"
+},
+{
+manufacturer:"Zhenjiang Marine Auxiliary Machinery Works",
+model:"LE65-1",
+source_name:"Life Boat Engine"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Life buoys（救生圈)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Life jackets（救生衣)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Life raft (救生筏)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"lighting and sockets(照明和插座)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"LSA（救生）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"LSFO cooler(低硫油冷却器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"M/E cooling water heater(主机暖缸水加热器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"M/E cylinder L.O heater (主机气缸油加热器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"M/E cylinder oil transfer pump(主机气缸油驳运泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"M/E L.O COOLER(主滑油冷却器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"M/E warm water for jacket pump(主机暖缸水泵)"
+},
+{
+manufacturer:"MAN",
+model:"5S60MC-C8",
+source_name:"Main Engine（主机）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Main switchboard(主配电板)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Measuring Instrument（测量仪表）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"MF/HF"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"MGPS system(防海生物系统)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Mooring winch lub oil pipes & v/vs(锚绞机液压系统管和阀件)"
+},
+{
+manufacturer:"武汉船舶机械有限责任公司",
+model:"147KN X 15m/min",
+source_name:"Mooring winch（系泊绞车)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NAVTEX"
+},
+{
+manufacturer:"无锡汾锡电机有限公司",
+model:"1FC5 356-6TA42",
+source_name:"No.1 Alternator for Diesel Generator（No.1柴油发电机)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 Aux. Blower of M/E"
+},
+{
+manufacturer:"",
+model:"DSL300-320/D-A",
+source_name:"NO.1 Ballast pump（压载泵)"
+},
+{
+manufacturer:"",
+model:"CR3-21-E-FGJ-AE-HQQE",
+source_name:"NO.1 Boiler feed water pump（锅炉给水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 F.O. booster pump（燃油增压泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 F.O. circulating pump（燃油循环泵)"
+},
+{
+manufacturer:"Alfa Laval Marine & Power AB",
+model:"FOPX609TFD-24",
+source_name:"NO.1 F.O.Heater（NO1重油分油机加热器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 Fresh water pump(日用淡水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"No.1 L T fresh water cooler（低温淡水冷却器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 Low temp fresh water cooling pump（低温淡水泵)"
+},
+{
+manufacturer:"",
+model:"DL300-B-ZSTGS",
+source_name:"NO.1 Main engine lube oil pump(主机滑油泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 Main jacket water cooling pump（主机缸套水泵)"
+},
+{
+manufacturer:"NANIWA PUMP MFG.CO.LTD",
+model:"MSL-200-265BD/14",
+source_name:"NO.1 Main sea water cooling pump（主海水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.1 Technology pump(技术水泵)"
+},
+{
+manufacturer:"无锡汾锡电机有限公司",
+model:"1FC5 356-6TA42",
+source_name:"No.2 Alternator for Diesel Generator（No.2柴油发电机)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 Aux. Blower of M/E"
+},
+{
+manufacturer:"",
+model:"DSL300-320/D-A",
+source_name:"NO.2 Ballast pump（压载泵)"
+},
+{
+manufacturer:"",
+model:"CR3-21-E-FGJ-AE-HQQE",
+source_name:"NO.2 Boiler feed water pump（锅炉给水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 F.O. booster pump（燃油增压泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 F.O. circulating pump（燃油循环泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 Fresh water pump(日用淡水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"No.2 L T fresh water cooler（低温淡水冷却器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 Low temp fresh water cooling pump（低温淡水泵)"
+},
+{
+manufacturer:"",
+model:"DL300-B-ZSTGS",
+source_name:"NO.2 Main engine lube oil pump(主机滑油泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 Main jacket water cooling pump（主机缸套水泵)"
+},
+{
+manufacturer:"NANIWA PUMP MFG.CO.LTD",
+model:"MSL-200-265BD/14",
+source_name:"NO.2 Main sea water cooling pump（主海水泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NO.2 Technology pump(技术水泵)"
+},
+{
+manufacturer:"无锡汾锡电机有限公司",
+model:"1FC5 356-6TA42",
+source_name:"No.3 Alternator for Diesel Generator（No.3柴油发电机)"
+},
+{
+manufacturer:"NK GERMANY",
+model:"HD 70.1.2.01.02.10.24",
+source_name:"NO1 Main air compressor（主空压机）"
+},
+{
+manufacturer:"NK GERMANY",
+model:"HD 70.1.2.01.02.10.24",
+source_name:"NO2 Main air compressor（主空压机）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"NON-RETTURN VALVES 货舱污水井止回阀"
+},
+{
+manufacturer:"OCEAN CLEAN",
+model:"OCEAN CLEAN 5.0EB",
+source_name:"Oily water separator(油水分离器）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pilot ladder(引水梯)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pipes & v/vs of v/v remote hydraulic oil system (阀门遥控液压系统的管和阀件)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pipes & v/vs(淡水管系和阀件)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pipes & v/vs(滑油管系和阀件)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pipes & v/vs(空气管系和阀件)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pipes & v/vs(燃油管系和阀件)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pipings（管系）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pneumatic louver (气动百叶窗)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Propeller (螺旋桨)"
+},
+{
+manufacturer:"TTS BOHAI MACHINERY(DALIAN) CO,LTD",
+model:"HP0100-051",
+source_name:"Provision Crane(伙食吊)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Pump Inquiries start function(泵的问询启动功能)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Quick closing v/vs (快关阀)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Quick closing valve (速闭阀)"
+},
+{
+manufacturer:"FURUNO ELECTRIC CO., LTD",
+model:"FAR-28x7",
+source_name:"Radar No.1"
+},
+{
+manufacturer:"FURUNO ELECTRIC CO., LTD",
+model:"FAR-28x7",
+source_name:"Radar No.1 & No.2"
+},
+{
+manufacturer:"FURUNO ELECTRIC CO., LTD",
+model:"FAR-28x7",
+source_name:"Radar No.2"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Radio & Navigation Equipment（通导和航海设备）"
+},
+{
+manufacturer:"JIAOYAN 江苏佼燕船舶设备有限公司",
+model:"JYR21",
+source_name:"Rescue Boat Engine"
+},
+{
+manufacturer:"Rolls-Royce",
+model:"RV1050-4",
+source_name:"Rudder Blade (舵叶)"
+},
+{
+manufacturer:"Rolls-Royce",
+model:"RV1050-4",
+source_name:"Rudder System(舵系)"
+},
+{
+manufacturer:"Rutter Technologies Inc",
+model:"VDR-100G2/G2S",
+source_name:"S-VDR"
+},
+{
+manufacturer:"江阴黄山船舶配件有限公司",
+model:"2100PTC",
+source_name:"SAFETY PINS OF GANGWAY 舷梯安全销"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Safety v/v and inlet, outlet v/v of pressure tank (压力柜安全阀和进，出口阀)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Safety v/vs of pipes(滑油管系安全阀)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Safety v/vs of pipes(燃油管系安全阀)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Safety v/vs of pipes(蒸汽管系安全阀)"
+},
+{
+manufacturer:"Rutter Technologies Inc",
+model:"VDR-100G2/G2S",
+source_name:"SART"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Sea Water filter（海水滤器)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Sea water pipes & v/vs(海水管和阀件)"
+},
+{
+manufacturer:"CSSC NANTONG LUZHOU MACHINE CO. LTD",
+model:"STC2",
+source_name:"Sewage plant and system(生活污水处理系统）"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"SHAFT GENERATOR"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"SLOP TANK(污水舱)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Sludge pipes &v/vs(污油管和阀件)"
+},
+{
+manufacturer:"NANIWA PUMP MFG.CO.LTD",
+model:"NMO38BY01L06B",
+source_name:"Sludge pump(油渣泵)"
+},
+{
+manufacturer:"JRC",
+model:"JAN-2000",
+source_name:"SPARE PART OF ECDIS 电子海图备件"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"special tool(专用工具)"
+},
+{
+manufacturer:"武汉船用机械有限责任公司",
+model:"FE21-140",
+source_name:"Steering Gear 舵机"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Stern tube lube oil transfer pump(艉轴滑油驳运泵)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Stern Tube(艉轴)"
+},
+{
+manufacturer:"江阴市华盛船舶机械有限公司",
+model:"JEM505",
+source_name:"Suez canal crane （苏伊士运河吊)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Tank ,heating pipe,Vent pipe heads (舱柜,加热管,清洗管,透气管头)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"The louver(百叶窗)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"the man excess hatch cover(甲板上小舱盖)"
+},
+{
+manufacturer:"FURUNO ELECTRIC CO., LTD",
+model:"FM-8800D/S",
+source_name:"TWO-WAY VHF"
+},
+{
+manufacturer:"FURUNO ELECTRIC CO., LTD",
+model:"FM-8800D/S",
+source_name:"VHF"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Void Tanks(空舱)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Watertight doors (水密门)"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"Workshop machinery"
+},
+{
+manufacturer:"",
+model:"",
+source_name:"除锈，油漆"
+}
+]

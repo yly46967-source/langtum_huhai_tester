@@ -1,0 +1,23 @@
+# Database
+*.db
+
+# Generated results
+langtum_tester/results/
+langtum_tester/uploads/
+
+# Logs
+*.log
+
+# Test/temp files
+*.xlsx
+!输出/20艘船舶设备列表.xlsx
+ltm_data-*.json
+manual_test_result.json
+test_workflow.py
+test_workflow.sh
+~$*
+
+# Python
+__pycache__/
+*.pyc
+.env
